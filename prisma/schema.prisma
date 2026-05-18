@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model PublicOfficial {
+  id             String @id
+  name           String
+  officeType     String
+  party          String
+  district       String
+  committee      String
+  termStart      DateTime
+  termEnd        DateTime
+  profileSummary String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Bill {
+  id               String @id
+  publicOfficialId String
+  title            String
+  role             String
+  status           String
+  proposedAt       DateTime
+  issueTags        String
+  sourceName       String
+  sourceUrl        String
+  evidenceGrade    String
+}
+
+model Vote {
+  id               String @id
+  publicOfficialId String
+  billTitle        String
+  voteResult       String
+  votedAt          DateTime
+  issueTags        String
+  sourceName       String
+  sourceUrl        String
+  evidenceGrade    String
+}
+
+model Statement {
+  id               String @id
+  publicOfficialId String
+  statementText    String
+  statementType    String
+  sourceType       String
+  sourceName       String
+  sourceUrl        String
+  publishedAt      DateTime
+  issueTags        String
+  evidenceGrade    String
+}
+
+model Evidence {
+  id               String @id
+  publicOfficialId String
+  evidenceType     String
+  sourceName       String
+  sourceUrl        String
+  capturedAt       DateTime
+  publishedAt      DateTime
+  evidenceGrade    String
+  reviewStatus     String
+}
+
+model AnalysisFinding {
+  id               String @id
+  publicOfficialId String
+  findingType      String
+  title            String
+  summary          String
+  issueTags        String
+  evidenceIds      String
+  confidenceLevel  String
+  reviewStatus     String
+  rebuttalStatus   String
+  createdAt        DateTime
+}
