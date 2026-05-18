@@ -2,9 +2,19 @@ import Link from "next/link";
 import { publicOfficials } from "@/lib/mock-data";
 
 export default function HomePage() {
+  const featuredMember = publicOfficials[0];
   return (
     <div className="space-y-10">
-      <section className="grid gap-8 py-6 md:grid-cols-[1.3fr_0.7fr] md:items-center">
+      <section className="grid gap-8 py-6 md:grid-cols-[240px_1.2fr_0.8fr] md:items-center">
+        <aside>
+          <div className="relative flex h-64 w-full items-center justify-center overflow-hidden rounded-lg border border-civic-line bg-gradient-to-br from-sky-100 to-teal-50 text-civic-blue md:h-80" aria-label={`${featuredMember.name} 국회의원 사진 자리`}>
+            <div className="absolute left-1/2 top-1/3 h-16 w-16 -translate-x-1/2 rounded-full border border-white/70 bg-white/60" />
+            <div className="absolute bottom-[-18%] left-1/2 h-32 w-36 -translate-x-1/2 rounded-t-full border border-white/70 bg-white/55" />
+            <span className="relative z-10 text-4xl font-bold">{featuredMember.name.slice(0, 1)}</span>
+            <span className="absolute bottom-3 left-3 right-3 rounded bg-white/80 px-2 py-1 text-center text-xs font-semibold text-civic-muted">국회의원 사진 자리</span>
+          </div>
+          <p className="mt-3 text-xs leading-5 text-civic-muted">MVP에서는 실제 인물 사진 대신 목업 프로필 영역을 표시합니다.</p>
+        </aside>
         <div>
           <p className="mb-2 text-sm font-semibold text-civic-teal">공식 기록 기준</p>
           <h1 className="text-3xl font-bold leading-tight md:text-4xl">선출직 공직자의 공개 발언과 공식 행동을 근거 기반으로 추적하는 시민용 기록 대시보드</h1>
