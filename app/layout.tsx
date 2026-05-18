@@ -16,6 +16,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <Link href="/" className="text-lg font-bold text-civic-blue">Public Office Watch</Link>
             <nav className="flex gap-4 text-sm font-medium text-civic-muted">
               <Link href="/members">국회의원</Link>
+              <Link href="/compare">비교</Link>
               <Link href="/issues">의제</Link>
             </nav>
           </div>
