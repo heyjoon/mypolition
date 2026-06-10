@@ -17,4 +17,12 @@ describe("route content guardrails", () => {
     expect(homePage).toContain('href="/compare"');
     expect(layout).toContain('href="/compare"');
   });
+
+  it("shows a neutral monthly featured official area on the landing page", () => {
+    const homePage = readFileSync(join(process.cwd(), "app", "page.tsx"), "utf8");
+
+    expect(homePage).toContain("이번 달 공개 기록 주목 공직자");
+    expect(homePage).toContain("최종 판단이 아닙니다");
+    expect(homePage).not.toContain("이번달의 가장 훌륭한 정치인");
+  });
 });
