@@ -36,8 +36,11 @@ npm run test
 npm run build
 npm run start
 npm run lint
+npm run check
 npm run prisma:generate
 ```
+
+`npm run check`는 CI와 로컬에서 동일하게 사용하는 전체 검증 명령입니다. `lint`, `test`, `build`를 순서대로 실행합니다.
 
 ## 데이터 소스 계획
 
@@ -72,3 +75,14 @@ npm run prisma:generate
 - 지방자치단체와 지방의회 공직자 모델 확장
 - 검색과 필터링 고도화
 - 접근성 및 모바일 사용성 개선
+
+## Codex 자동화 구조
+
+- 저장소 작업 규칙: `AGENTS.md`
+- 제품 명세: `docs/APP_SPEC.md`
+- 데이터 소스 계획: `docs/DATA_SOURCES.md`
+- 테스트 전략: `docs/TEST_STRATEGY.md`
+- 반복 작업 skill: `skills/korean-legislation-app/SKILL.md`
+- CI: `.github/workflows/ci.yml`
+- PR 검토 체크리스트: `.github/workflows/codex-review.yml`
+- CI 실패 후속 처리: `.github/workflows/codex-autofix.yml`

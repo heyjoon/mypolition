@@ -1,0 +1,26 @@
+name: Codex Review Checklist
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  review-checklist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Print Codex review checklist
+        run: |
+          echo "Codex review checklist"
+          echo "- Verify neutral Korean wording."
+          echo "- Verify no defamatory labels, rankings, scoreboards, or trust scores."
+          echo "- Verify public-record comparison is not presented as final judgment."
+          echo "- Verify source, date, evidence grade, and review status expectations."
+          echo "- Run npm run check before merge."
