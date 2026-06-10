@@ -18,6 +18,14 @@ describe("route content guardrails", () => {
     expect(layout).toContain('href="/compare"');
   });
 
+  it("links to official Assembly API data from landing and navigation", () => {
+    const homePage = readFileSync(join(process.cwd(), "app", "page.tsx"), "utf8");
+    const layout = readFileSync(join(process.cwd(), "app", "layout.tsx"), "utf8");
+
+    expect(homePage).toContain('href="/assembly"');
+    expect(layout).toContain('href="/assembly"');
+  });
+
   it("shows a neutral monthly featured official area on the landing page", () => {
     const homePage = readFileSync(join(process.cwd(), "app", "page.tsx"), "utf8");
 

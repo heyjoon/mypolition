@@ -47,6 +47,9 @@ export default function HomePage() {
             <Link className="focus-ring rounded border border-civic-line bg-white px-5 py-3 text-sm font-semibold text-civic-ink hover:border-civic-blue" href="/compare">
               기록 비교
             </Link>
+            <Link className="focus-ring rounded border border-civic-line bg-white px-5 py-3 text-sm font-semibold text-civic-ink hover:border-civic-blue" href="/assembly">
+              실제 국회 데이터
+            </Link>
           </div>
         </div>
 

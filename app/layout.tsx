@@ -13,11 +13,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="min-h-screen bg-civic-panel text-civic-ink antialiased">
         <header className="border-b border-civic-line bg-white">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-            <Link href="/" className="text-lg font-bold text-civic-blue">Public Office Watch</Link>
+            <Link href="/" className="text-lg font-bold tracking-[0] text-civic-blue">
+              Public Office Watch
+            </Link>
             <nav className="flex gap-4 text-sm font-medium text-civic-muted">
-              <Link href="/members">국회의원</Link>
-              <Link href="/compare">비교</Link>
-              <Link href="/issues">의제</Link>
+              <Link className="focus-ring rounded px-1 py-1 hover:text-civic-ink" href="/members">
+                국회의원
+              </Link>
+              <Link className="focus-ring rounded px-1 py-1 hover:text-civic-ink" href="/assembly">
+                실제 국회
+              </Link>
+              <Link className="focus-ring rounded px-1 py-1 hover:text-civic-ink" href="/compare">
+                비교
+              </Link>
+              <Link className="focus-ring rounded px-1 py-1 hover:text-civic-ink" href="/issues">
+                의제
+              </Link>
             </nav>
           </div>
         </header>
