@@ -5,3 +5,4 @@ coverage
 .env
 dev.db
 dev.db-journal
+.assembly-data/
